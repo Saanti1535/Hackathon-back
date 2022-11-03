@@ -30,8 +30,10 @@ public class Game {
     @ManyToOne
     @JoinColumn(name = "team_away_id")
     Team teamAway;
-
-
+    
+    String winner; // "TEAM_HOME" | "TEAM_AWAY" | "DRAW"
+    
     LocalDateTime gameSchedule;
-    boolean finished;
+    String stage;
+    String group;
 }

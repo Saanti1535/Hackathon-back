@@ -33,7 +33,8 @@ public class Prediction {
 
     @ManyToOne
     @JoinColumn(name = "winner_team_id")
-    Team winnerTeam;
+    Team predictedWinnerTeam;
+    
     LocalDateTime predictionTime;
     LocalDateTime lastUpdated;
 }
