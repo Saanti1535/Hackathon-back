@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,4 +20,8 @@ public class Match {
     @Id
     @GeneratedValue
     Long id;
+    Long idTeamHome;
+    Long idTeamAway;
+    LocalDateTime matchSchedule;
+    boolean finished;
 }
