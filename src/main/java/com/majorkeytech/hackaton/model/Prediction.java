@@ -10,6 +10,8 @@ import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Data
 @Builder
@@ -20,9 +22,18 @@ public class Prediction {
     @Id
     @GeneratedValue
     Long id;
-    Long idUser;
-    Long idMatch;
-    Long idWinnerTeam;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    User user;
+
+    @ManyToOne
+    @JoinColumn(name = "game_id")
+    Game game;
+
+    @ManyToOne
+    @JoinColumn(name = "winner_team_id")
+    Team winnerTeam;
     LocalDateTime predictionTime;
     LocalDateTime lastUpdated;
 }
