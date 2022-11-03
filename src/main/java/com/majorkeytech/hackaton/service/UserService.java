@@ -2,6 +2,9 @@ package com.majorkeytech.hackaton.service;
 
 import com.majorkeytech.hackaton.model.User;
 import com.majorkeytech.hackaton.repository.UserRepository;
+
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
