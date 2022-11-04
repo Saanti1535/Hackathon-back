@@ -71,4 +71,8 @@ public class UserService {
 			throw new DataConsistencyException(MAIL_REGISTERED_ERROR_MSG);
 		}
 	}
+
+	public User getUserById(long userId) {
+		return userRepository.getById(userId);
+	}
 }

@@ -1,5 +1,6 @@
 package com.majorkeytech.hackaton.service;
 
+import com.majorkeytech.hackaton.model.Game;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,5 +14,7 @@ import lombok.RequiredArgsConstructor;
 public class GameService {
 	private final GameRepository gameRepository;
 	
-	
+	public Game getGameById(long gameId) {
+		return gameRepository.getById(gameId);
+	}
 }

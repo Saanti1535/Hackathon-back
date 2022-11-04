@@ -31,10 +31,6 @@ public class Prediction {
     @JoinColumn(name = "game_id")
     Game game;
 
-    @ManyToOne
-    @JoinColumn(name = "winner_team_id")
-    Team predictedWinnerTeam;
-    
+    String predictedWinnerTeam;
     LocalDateTime predictionTime;
-    LocalDateTime lastUpdated;
 }

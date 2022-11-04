@@ -35,5 +35,5 @@ public class Game {
     
     LocalDateTime gameSchedule;
     String stage;
-    String group;
+    String groupStage;
 }
