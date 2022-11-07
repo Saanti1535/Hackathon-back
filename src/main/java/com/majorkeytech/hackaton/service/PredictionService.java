@@ -36,4 +36,12 @@ public class PredictionService {
 
 		predictionRepository.save(prediction);
 	}
+	
+	public void calculateUserScore(User user) {
+		List<Prediction> predictions = predictionRepository.getPredictionsByUserId(user.getId());
+		int sum = predictions.stream().mapToInt(x -> x.getScoreOfPrediction()).sum();
+		
+		user.setPoints(sum);
+		userService.saveUser(user);
+	}
 }

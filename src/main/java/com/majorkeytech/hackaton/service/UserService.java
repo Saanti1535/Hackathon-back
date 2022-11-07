@@ -4,6 +4,8 @@ import com.majorkeytech.hackaton.businessExceptions.DataConsistencyException;
 import com.majorkeytech.hackaton.model.User;
 import com.majorkeytech.hackaton.repository.UserRepository;
 
+import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -41,6 +43,10 @@ public class UserService {
     	if(!userRepository.existsByEmailAndPassword(email, password)) {
     		throw new SecurityException("Incorrect email or password");
     	};
+    }
+    
+    public List<User> getAll() {
+    	return userRepository.findAll();
     }
     
     public void update(User user) {

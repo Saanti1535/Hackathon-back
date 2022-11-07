@@ -33,4 +33,9 @@ public class Prediction {
 
     String predictedWinnerTeam;
     LocalDateTime predictionTime;
+    
+    public int getScoreOfPrediction() {
+    	if(predictedWinnerTeam == game.winner) return  1;
+    	else return 0;
+    }
 }

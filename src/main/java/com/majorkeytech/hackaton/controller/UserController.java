@@ -6,6 +6,9 @@ import com.majorkeytech.hackaton.service.UserService;
 
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,5 +33,10 @@ public class UserController {
     @PutMapping("/api/1.0/users/update")
     public void updateUser(@RequestBody User updatedUser) throws DataConsistencyException {
     	userService.update(updatedUser);
+    }
+    
+    @GetMapping("/api/1.0/users/getAll")
+    public List<User> getUsers() {
+    	return userService.getAll();
     }
 }
